@@ -1,92 +1,87 @@
-# Brayan Arango
+**Confidential. *Please do not make public this document or your solution.***
 
+<p>
+<img alt="veritran logo" width="500" src="https://i.imgur.com/jsTbKua.png">
+</p>
 
+# Veritran's React Code Exercise
 
-## Getting started
+# We will pay extreme attention to:
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+- **Object oriented design.**
+- **Testable design & TDD.**
+- **Clean code, KISS, DRY**
+- **Extensibility**
+- **SOLID Principles.**
+- **Attention to details.**
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+# Background
 
-## Add your files
+Your mission is to create a simple ComboBox using **React**, **StyledComponents** and **Typescript**. A ComboBox is a
+component that lets you select an option from a set list of options, allowing the user to search an item by text.
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+When in doubt, go for the simplest solution. You don’t need to create any kind of user interface apart from the ComboBox
+nor make these features available through any server. It's not required to expose as a web service nor implement a
+database.
 
-```
-cd existing_repo
-git remote add origin https://gitlab.com/veritran/hiring-exercises/brayan-arango.git
-git branch -M main
-git push -uf origin main
-```
+Write tests for your component so that you can verify it is working correctly as you iterate over the component.
 
-## Integrate with your tools
+The exercise evolves as a sequence of iterations. Try to complete each iteration before reading the next one.
 
-- [ ] [Set up project integrations](https://gitlab.com/veritran/hiring-exercises/brayan-arango/-/settings/integrations)
+You can import the file [combobox.fig](combobox.fig) into Figma to get an idea of the colors, sizes, etc.
 
-## Collaborate with your team
+## What to do
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+### Iteration 1: Create a simple ComboBox
 
-## Test and Deploy
+Use the following images as a visual representation of the expected control:
 
-Use the built-in continuous integration in GitLab.
+<p>
+<img alt="iteration1" width="500" src="https://i.imgur.com/pkGaVRF.png">
+</p>
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+It does not need to be an exact replica, although try to make it as similar as possible.
 
-***
+The ComboBox needs to have the following interactions:
 
-# Editing this README
+- The options show the display value of the selected option.
+- The options show when the ComboBox gains focus.
+- The options stop showing when the ComboBox looses focus.
+- When an option is selected, it must call onChange passing the option's value as the only parameter to the function.
+- There is no need to add text search in this step, so there is no point in letting the user write on the control.
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
+### Iteration 2: Make it clearable
 
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+The ComboBox needs to have the option to clear it, since some clients require it.
 
-## Name
-Choose a self-explaining name for your project.
+<p>
+<img alt="iteration2" width="500" src="https://i.imgur.com/xO4gcEf.png">
+</p>
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+This should:
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+- Add an "X", which calls onChange with null as the only parameter to the function when it is clicked.
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+### Iteration 3: Filter options by text
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+When the ComboBox is written, only options that match said text should be shown. This means that given the
+options `["Dólar", "Peso", "Rublo"]` and having written `"l"` on the ComboBox, Dólar and Rublo should show, but Peso
+should not.
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+<p>
+<img alt="iteration3" width="500" src="https://i.imgur.com/ltrqdP6.png">
+</p>
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+### Iteration 4: Add "server fetch" feature
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+Some users can't load all options on the ComboBox because there are just to many of them and their DBs would freeze.
+What they need is to be able to show just some options at a time, based on the text the user is typing. That way, when
+the user types some text, the server will retrieve the options that the ComboBox needs to show. Bear in mind that you do
+not need to code the server calls, just make it posible for the ComboBox to implement this feature.
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+While using this feature:
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+- Do not show options if the text is less than 3 characters typed by the user.
+- When the user writes 3 or more characters into the ComboBox, call an event that allows said behaviour.
+- Add an example that illustrates this feature in action (again, there is no need to implement a DB or remote calls for
+  this. Just simulating them is fine).
