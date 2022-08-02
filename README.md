@@ -1,5 +1,3 @@
-**Confidential. *Please do not make public this document or your solution.***
-
 <p>
 <img alt="veritran logo" width="500" src="https://i.imgur.com/jsTbKua.png">
 </p>
@@ -85,3 +83,6 @@ While using this feature:
 - When the user writes 3 or more characters into the ComboBox, call an event that allows said behaviour.
 - Add an example that illustrates this feature in action (again, there is no need to implement a DB or remote calls for
   this. Just simulating them is fine).
+
+
+You can see the demo [here](https://br3y1n.github.io/veritran-challenge/)
