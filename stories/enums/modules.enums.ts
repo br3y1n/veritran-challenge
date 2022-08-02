@@ -1,5 +1,5 @@
 enum ModulesEnum {
-  DOCUMENTATION = "Documentation",
+  DOCUMENT = "Document",
   COMPONENTS = "Components",
 }
 
