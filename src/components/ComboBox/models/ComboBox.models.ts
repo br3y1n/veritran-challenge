@@ -6,7 +6,7 @@ interface ComboBoxProps {
   /**
    * Callback that is called when an option is chosen
    */
-  onChange: (option: string) => void;
+  onChange: (option: string | null) => void;
 }
 
 export { ComboBoxProps };
