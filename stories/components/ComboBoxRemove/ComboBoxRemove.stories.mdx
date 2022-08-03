@@ -1,0 +1,32 @@
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs";
+import ComboBoxRemoveWrapper, {
+  COMBO_BOX_REMOVE_ARGS_DEFAULT,
+  COMBO_BOX_REMOVE_TITLE,
+} from "./ComboBoxRemove.wrapper";
+import ComboBoxRemove from "../../../src/components/ComboBoxRemove/ComboBoxRemove";
+
+<Meta component={ComboBoxRemove} title={COMBO_BOX_REMOVE_TITLE} />
+
+# ComboBoxRemove
+
+A ComboBox is a component that lets you select/remove an option from a set list of options.
+
+**behaviour**
+
+- The options show the display value of the selected option.
+- The options show when the ComboBox gains focus.
+- The options stop showing when the ComboBox looses focus.
+- When an option is selected, it must call onChange passing the option's value as the only parameter to the function and show the X icon.
+- When X is clicked, then onChange is called with a null option.
+
+## Props
+
+<ArgsTable of={ComboBoxRemove} />
+
+## Iteration 2 code
+
+<Canvas withSource="open">
+  <Story name="Default" args={COMBO_BOX_REMOVE_ARGS_DEFAULT}>
+    {ComboBoxRemoveWrapper.bind({})}
+  </Story>
+</Canvas>

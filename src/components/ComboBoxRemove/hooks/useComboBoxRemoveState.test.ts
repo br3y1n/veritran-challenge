@@ -1,18 +1,22 @@
 import { act, renderHook, RenderHookResult } from "@testing-library/react";
-import { ComboBoxProps, UseComboBoxStateResponse } from "../models";
-import { useComboBoxState } from "./useComboBoxState";
+import {
+  ComboBoxProps,
+  UseComboBoxRemoveStateResponse,
+  UseComboBoxStateResponse,
+} from "../models";
 import { KeyCodeEnum } from "../../../enums";
+import { useComboBoxRemoveState } from "./useComboBoxRemoveState";
 
 const comboBoxProps: ComboBoxProps = {
   options: ["test1", "test2", "test3"],
   onChange: jest.fn(),
 };
 
-describe("useComboBoxState tests:", () => {
-  let response: RenderHookResult<UseComboBoxStateResponse, unknown>;
+describe("useComboBoxRemoveState tests:", () => {
+  let response: RenderHookResult<UseComboBoxRemoveStateResponse, unknown>;
 
   beforeEach(() => {
-    response = renderHook(() => useComboBoxState(comboBoxProps));
+    response = renderHook(() => useComboBoxRemoveState(comboBoxProps));
   });
 
   it("When it is called, then it return a initial state", () => {
@@ -21,6 +25,7 @@ describe("useComboBoxState tests:", () => {
       isOpen: false,
       isSelected: false,
       itemSelected: null,
+      onRemove: expect.anything(),
       onChangeOption: expect.anything(),
       onKeyDown: expect.anything(),
       optionsMapped: [
@@ -152,5 +157,19 @@ describe("useComboBoxState tests:", () => {
     });
 
     expect(comboBoxProps.onChange).toBeCalledWith("test1");
+  });
+
+  it("When onRemove is called , then onChange is called with null", () => {
+    act(() => {
+      response.result.current.onRemove(
+        //@ts-ignore
+        {
+          preventDefault: jest.fn(),
+          stopPropagation: jest.fn(),
+        }
+      );
+    });
+
+    expect(comboBoxProps.onChange).toBeCalledWith(null);
   });
 });
