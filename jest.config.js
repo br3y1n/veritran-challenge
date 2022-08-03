@@ -8,7 +8,7 @@ module.exports = {
     "\\.(png)$": "identity-obj-proxy",
     "\\.(svg)$": "identity-obj-proxy",
   },
-  setupFilesAfterEnv: ["./jest.setup.tsx"],
+  setupFilesAfterEnv: ["./presets/jest.setup.tsx"],
   coverageThreshold: {
     global: {
       branches: 100,
@@ -22,6 +22,7 @@ module.exports = {
   collectCoverageFrom: ["<rootDir>/**/*.{ts,tsx}"],
   coveragePathIgnorePatterns: [
     "/node_modules/",
-    ".(modules|styles|enums).(ts|tsx)",
+    ".(models|styles|enums|d).(ts|tsx)",
+    "index.(ts|tsx)",
   ],
 };

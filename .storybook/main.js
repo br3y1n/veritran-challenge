@@ -8,6 +8,9 @@ module.exports = {
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
   ],
+  features: {
+    emotionAlias: false,
+  },
   framework: "@storybook/react",
   staticDirs: ["../public"],
 };
