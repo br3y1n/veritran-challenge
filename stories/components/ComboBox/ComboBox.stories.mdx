@@ -1,0 +1,25 @@
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
+import ComboBoxWrapper, {
+  COMBO_BOX_ARGS_DEFAULT,
+  COMBO_BOX_TITLE,
+} from "./ComboBox.wrapper";
+import ComboBox from "../../../src/components/ComboBox/ComboBox";
+
+<Meta component={ComboBox} title={COMBO_BOX_TITLE} />
+
+# ComboBox
+
+XXXX.
+
+**Comportamiento**
+
+- xxx.
+- xxx.
+
+## Iteration 1
+
+<Canvas withSource="open">
+  <Story name="Default" args={COMBO_BOX_ARGS_DEFAULT}>
+    {ComboBoxWrapper.bind({})}
+  </Story>
+</Canvas>
