@@ -22,7 +22,11 @@ const ComboBoxTemplateStyles = styled.div`
   user-select: none;
 
   &:focus-visible {
-    outline: ${selectColorSecondary} auto 1px;
+    outline: none;
+
+    &:not(.focused) {
+      outline: ${selectColorSecondary} auto 1px;
+    }
   }
 
   &.focused {

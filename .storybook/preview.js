@@ -1,5 +1,6 @@
 import { ThemeProvider } from "styled-components";
 import { theme } from "../src/theme/theme";
+import { ModulesEnum } from "../stories/enums";
 
 const decorators = [
   (Story) => (
@@ -16,6 +17,11 @@ const parameters = {
     matchers: {
       color: /(background|color)$/i,
       date: /Date$/,
+    },
+  },
+  options: {
+    storySort: {
+      order: [ModulesEnum.DOCUMENT, ModulesEnum.COMPONENTS],
     },
   },
 };

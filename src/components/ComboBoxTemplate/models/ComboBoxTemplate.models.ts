@@ -5,7 +5,7 @@ interface ComboBoxTemplateProps {
   renderItems: () => ReactElement;
   isOpen: boolean;
   onClick: () => void;
-  onBlur: () => void;
+  onClickOutside: () => void;
   onKeyDown: KeyboardEventHandler<HTMLDivElement>;
 }
 

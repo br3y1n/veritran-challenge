@@ -9,7 +9,7 @@ const comboBoxProps: ComboBoxTemplateProps = {
   renderLeft: () => <div data-testid={"renderLeft"} />,
   renderItems: () => <div data-testid={"renderItems"} />,
   onClick: jest.fn(),
-  onBlur: jest.fn(),
+  onClickOutside: jest.fn(),
 };
 
 describe("ComboBoxTemplate tests:", () => {
@@ -53,10 +53,14 @@ describe("ComboBoxTemplate tests:", () => {
     expect(select).toBeInTheDocument();
 
     act(() => {
-      fireEvent.blur(select);
+      fireEvent.click(select);
     });
 
-    expect(comboBoxProps.onBlur).toBeCalledTimes(1);
+    act(() => {
+      fireEvent.mouseDown(document);
+    });
+
+    expect(comboBoxProps.onClickOutside).toBeCalledTimes(1);
   });
 
   it("When key is press is select, then onKeyDown is called", () => {
