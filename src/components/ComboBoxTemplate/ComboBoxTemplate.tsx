@@ -1,32 +1,38 @@
-import { FC } from "react";
+import { FC, RefObject, useRef } from "react";
 import {
   ComboBoxTemplateStyles,
   LeftContainer,
 } from "./ComboBoxTemplate.styles";
 import Chevron from "../Chevron/Chevron";
 import { ComboBoxTemplateProps } from "./models";
+import { useOnClickOutside } from "../../hooks/useOnClickOutside/useOnClickOutside";
 
 const ComboBoxTemplate: FC<ComboBoxTemplateProps> = ({
   renderLeft,
   renderItems,
   isOpen,
   onClick,
-  onBlur,
+  onClickOutside,
   onKeyDown,
-}) => (
-  <ComboBoxTemplateStyles
-    role={"button"}
-    tabIndex={0}
-    onClick={onClick}
-    className={isOpen ? "focused" : undefined}
-    onBlur={onBlur}
-    onKeyDown={onKeyDown}
-  >
-    <LeftContainer>{renderLeft()}</LeftContainer>
-    <Chevron isUp={isOpen} />
+}) => {
+  const ref = useRef<HTMLElement>();
+  useOnClickOutside(ref, onClickOutside);
 
-    {isOpen && renderItems()}
-  </ComboBoxTemplateStyles>
-);
+  return (
+    <ComboBoxTemplateStyles
+      role={"button"}
+      tabIndex={0}
+      onClick={onClick}
+      className={isOpen ? "focused" : undefined}
+      onKeyDown={onKeyDown}
+      ref={ref as unknown as RefObject<HTMLDivElement>}
+    >
+      <LeftContainer>{renderLeft()}</LeftContainer>
+      <Chevron isUp={isOpen} />
+
+      {isOpen && renderItems()}
+    </ComboBoxTemplateStyles>
+  );
+};
 
 export default ComboBoxTemplate;

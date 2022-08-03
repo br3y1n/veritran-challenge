@@ -85,11 +85,36 @@ describe("useComboBoxState tests:", () => {
         // @ts-ignore
         {
           code: KeyCodeEnum.ENTER,
+          preventDefault: jest.fn(),
         }
       );
     });
 
     expect(response.result.current.isOpen).toEqual(true);
+  });
+
+  it("When onKeyDown is called with Enter and Tab code, then isOpen is false", () => {
+    act(() => {
+      response.result.current.onKeyDown(
+        // @ts-ignore
+        {
+          code: KeyCodeEnum.ENTER,
+          preventDefault: jest.fn(),
+        }
+      );
+    });
+
+    act(() => {
+      response.result.current.onKeyDown(
+        // @ts-ignore
+        {
+          code: KeyCodeEnum.TAB,
+          preventDefault: jest.fn(),
+        }
+      );
+    });
+
+    expect(response.result.current.isOpen).toEqual(false);
   });
 
   it("When onKeyDown is called with Enter code two times, then optionsMapped first item is selected", () => {
@@ -98,6 +123,7 @@ describe("useComboBoxState tests:", () => {
         // @ts-ignore
         {
           code: KeyCodeEnum.ENTER,
+          preventDefault: jest.fn(),
         }
       );
     });
@@ -107,6 +133,7 @@ describe("useComboBoxState tests:", () => {
         // @ts-ignore
         {
           code: KeyCodeEnum.ENTER,
+          preventDefault: jest.fn(),
         }
       );
     });

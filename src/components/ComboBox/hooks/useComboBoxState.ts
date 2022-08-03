@@ -34,6 +34,8 @@ const useComboBoxState: UseComboBoxState = ({ options, onChange }) => {
   };
 
   const onKeyDown: KeyboardEventHandler<HTMLDivElement> = (event) => {
+    event.preventDefault();
+
     const keyActions: Record<KeyCodeEnum | "default", () => void> = {
       [KeyCodeEnum.ENTER]: () => {
         isOpen && onChangeOption(options[itemFocused!]);
@@ -41,6 +43,10 @@ const useComboBoxState: UseComboBoxState = ({ options, onChange }) => {
       },
 
       [KeyCodeEnum.ESCAPE]: () => {
+        closeMenu();
+      },
+
+      [KeyCodeEnum.TAB]: () => {
         closeMenu();
       },
 
