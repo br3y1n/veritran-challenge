@@ -4,10 +4,10 @@ import { KeyCodeEnum } from "../../../enums";
 
 const useComboBoxState: UseComboBoxState = ({ options, onChange }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [itemSelected, setItemSelected] = useState<string>();
+  const [itemSelected, setItemSelected] = useState<string | null>(null);
   const [itemFocused, setItemFocused] = useState<number>(0);
 
-  const isSelected = itemSelected !== undefined;
+  const isSelected = itemSelected !== null;
   const classLabel = isSelected ? "selected" : undefined;
 
   const optionsMapped: Options[] = useMemo(
@@ -28,7 +28,7 @@ const useComboBoxState: UseComboBoxState = ({ options, onChange }) => {
     setIsOpen(false);
   };
 
-  const onChangeOption = (option: string) => {
+  const onChangeOption = (option: string | null) => {
     onChange(option);
     setItemSelected(option);
   };

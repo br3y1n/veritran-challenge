@@ -7,11 +7,11 @@ interface UseComboBoxStateResponse {
   classLabel?: string;
   isSelected: boolean;
   optionsMapped: Options[];
-  itemSelected?: string;
+  itemSelected: string | null;
   toggleMenu: () => void;
   closeMenu: () => void;
   onKeyDown: KeyboardEventHandler<HTMLDivElement>;
-  onChangeOption: (option: string) => void;
+  onChangeOption: (option: string | null) => void;
 }
 
 type UseComboBoxState = (props: ComboBoxProps) => UseComboBoxStateResponse;
