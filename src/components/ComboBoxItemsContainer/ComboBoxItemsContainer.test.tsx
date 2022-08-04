@@ -21,6 +21,15 @@ describe("ComboBoxItemsContainer tests:", () => {
     expect(option).toHaveLength(3);
   });
 
+  it("When options are empty, then no matches found text is rendered", () => {
+    const newProps = { ...comboBoxItemsContainer, options: [] };
+    renderWithTheme(<ComboBoxItemsContainer {...newProps} />);
+
+    const text = screen.getByText(/no matches found/i);
+
+    expect(text).toBeInTheDocument();
+  });
+
   it("When a option is clicked, then onChangeOption is called with a option", () => {
     renderWithTheme(<ComboBoxItemsContainer {...comboBoxItemsContainer} />);
 

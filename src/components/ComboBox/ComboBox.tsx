@@ -1,9 +1,9 @@
-import { FC } from "react";
 import ComboBoxTemplate from "../ComboBoxTemplate/ComboBoxTemplate";
+import ComboBoxItemsContainer from "../ComboBoxItemsContainer/ComboBoxItemsContainer";
+import { FC } from "react";
 import { ComboBoxLabelStyles, PSelectedStyles } from "./ComboBox.styles";
 import { ComboBoxProps } from "./models";
 import { useComboBoxState } from "./hooks/useComboBoxState";
-import ComboBoxItemsContainer from "../ComboBoxItemsContainer/ComboBoxItemsContainer";
 
 const ComboBox: FC<ComboBoxProps> = (props) => {
   const {

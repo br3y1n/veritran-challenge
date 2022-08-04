@@ -1,6 +1,7 @@
 import { renderHook } from "@testing-library/react";
 import { useComboBoxItemsContainerState } from "./useComboBoxItemsContainerState";
 import { useRef } from "react";
+import { ComboBoxItemsContainerProps } from "../models";
 
 const mockRef = {
   current: {
@@ -12,6 +13,11 @@ const mockRef = {
     offsetTop: 50,
     offsetHeight: 200,
   },
+};
+
+const props: ComboBoxItemsContainerProps = {
+  options: [{ option: "test1", focused: true, selected: true }],
+  onChangeOption: jest.fn(),
 };
 
 jest.mock("react", () => ({
@@ -30,7 +36,7 @@ describe("useComboBoxItemsContainerState tests:", () => {
     (useRef as jest.Mock).mockReturnValue(mockRef);
     jest.spyOn(window, "scroll").mockImplementation(() => {});
 
-    const response = renderHook(() => useComboBoxItemsContainerState());
+    const response = renderHook(() => useComboBoxItemsContainerState(props));
 
     expect(response.result.current).toEqual({ ref: mockRef });
   });
@@ -38,7 +44,7 @@ describe("useComboBoxItemsContainerState tests:", () => {
   it("When ref isScrollable, then scroll is called", () => {
     (useRef as jest.Mock).mockReturnValue(mockRef);
 
-    renderHook(() => useComboBoxItemsContainerState());
+    renderHook(() => useComboBoxItemsContainerState(props));
 
     expect(mockScroll).toBeCalledTimes(1);
   });
@@ -51,7 +57,7 @@ describe("useComboBoxItemsContainerState tests:", () => {
       },
     });
 
-    renderHook(() => useComboBoxItemsContainerState());
+    renderHook(() => useComboBoxItemsContainerState(props));
 
     expect(mockScroll).toBeCalledTimes(0);
   });

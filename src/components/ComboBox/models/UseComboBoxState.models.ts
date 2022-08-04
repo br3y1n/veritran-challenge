@@ -1,12 +1,12 @@
 import { ComboBoxProps } from "./ComboBox.models";
-import { Options } from "./Options.models";
+import { Option } from "./Options.models";
 import { KeyboardEventHandler } from "react";
 
 interface UseComboBoxStateResponse {
   isOpen: boolean;
   classLabel?: string;
   isSelected: boolean;
-  optionsMapped: Options[];
+  optionsMapped: Option[];
   itemSelected: string | null;
   toggleMenu: () => void;
   closeMenu: () => void;

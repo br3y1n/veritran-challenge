@@ -1,11 +1,13 @@
 import { MutableRefObject } from "react";
+import { ComboBoxItemsContainerProps } from "./ComboBoxItemsContainer.models";
 
 interface UseComboBoxItemsContainerStateResponse {
   ref: MutableRefObject<HTMLElement | undefined>;
 }
 
-type UseComboBoxItemsContainerState =
-  () => UseComboBoxItemsContainerStateResponse;
+type UseComboBoxItemsContainerState = (
+  props: ComboBoxItemsContainerProps
+) => UseComboBoxItemsContainerStateResponse;
 
 export {
   UseComboBoxItemsContainerState,

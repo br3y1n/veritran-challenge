@@ -1,7 +1,9 @@
 import { useEffect, useRef } from "react";
 import { UseComboBoxItemsContainerState } from "../models/UseComboBoxItemsContainerState.models";
 
-const useComboBoxItemsContainerState: UseComboBoxItemsContainerState = () => {
+const useComboBoxItemsContainerState: UseComboBoxItemsContainerState = ({
+  options,
+}) => {
   const ref = useRef<HTMLElement>();
 
   useEffect(() => {
@@ -22,7 +24,7 @@ const useComboBoxItemsContainerState: UseComboBoxItemsContainerState = () => {
         behavior: "smooth",
       });
     }
-  }, []);
+  }, [options]);
 
   return { ref };
 };
