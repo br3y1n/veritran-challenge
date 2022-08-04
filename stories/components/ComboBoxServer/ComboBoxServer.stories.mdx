@@ -1,0 +1,31 @@
+import { ArgsTable, Canvas, Meta, Story } from "@storybook/addon-docs";
+import ComboBoxServerWrapper, {
+  COMBO_BOX_SERVER_ARGS_DEFAULT,
+  COMBO_BOX_SERVER_TITLE,
+} from "./ComboBoxServer.wrapper";
+import ComboBoxServer from "../../../src/components/ComboBoxServer/ComboBoxServer";
+
+<Meta component={ComboBoxServer} title={COMBO_BOX_SERVER_TITLE} />
+
+# ComboBoxServer
+
+ComboBoxServer is a component that lets you search an item by text on list of options, (server data).
+
+**behaviour**
+
+- Do not show options if the text is less than 3 characters typed by the user.
+- When the user writes 3 or more characters into the ComboBox, call an event that allows said behaviour.
+- Add an example that illustrates this feature in action (again, there is no need to implement a DB or remote calls for
+  this. Just simulating them is fine).
+
+## Props
+
+<ArgsTable of={ComboBoxServer} />
+
+## Iteration 4 code
+
+<Canvas withSource="open">
+  <Story name="Default" args={COMBO_BOX_SERVER_ARGS_DEFAULT}>
+    {ComboBoxServerWrapper.bind({})}
+  </Story>
+</Canvas>
