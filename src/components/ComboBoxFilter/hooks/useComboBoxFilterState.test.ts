@@ -14,7 +14,7 @@ const comboBoxProps: ComboBoxProps = {
   onChange: jest.fn(),
 };
 
-describe("useComboBoxFilterState tests:", () => {
+describe("useComboBoxServerState tests:", () => {
   let response: RenderHookResult<UseComboBoxFilterStateResponse, unknown>;
   let focus: jest.Mock;
   let blur: jest.Mock;
