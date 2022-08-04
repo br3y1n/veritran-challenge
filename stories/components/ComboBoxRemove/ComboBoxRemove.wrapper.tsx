@@ -3,7 +3,7 @@ import { IterationsEnum, ModulesEnum, SubmodulesEnum } from "../../enums";
 import { ComponentStory } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import ComboBoxRemove from "../../../src/components/ComboBoxRemove/ComboBoxRemove";
-import { ComboBoxRemoveProps } from "../../../src/components/ComboBoxRemove/models";
+import { ComboBoxProps } from "../../../src/components/ComboBox/models";
 
 const COMBO_BOX_REMOVE_TITLE = buildTitle([
   ModulesEnum.COMPONENTS,
@@ -12,7 +12,7 @@ const COMBO_BOX_REMOVE_TITLE = buildTitle([
   ComboBoxRemove,
 ]);
 
-const COMBO_BOX_REMOVE_ARGS_DEFAULT: ComboBoxRemoveProps = {
+const COMBO_BOX_REMOVE_ARGS_DEFAULT: ComboBoxProps = {
   options: ["H&M", "Zara", "Renuar", "Bershka"],
   onChange: action("onChange"),
 };

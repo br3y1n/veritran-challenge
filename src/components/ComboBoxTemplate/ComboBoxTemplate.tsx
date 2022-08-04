@@ -14,6 +14,7 @@ const ComboBoxTemplate: FC<ComboBoxTemplateProps> = ({
   onClick,
   onClickOutside,
   onKeyDown,
+  onFocus,
 }) => {
   const ref = useRef<HTMLElement>();
   useOnClickOutside(ref, onClickOutside);
@@ -23,6 +24,7 @@ const ComboBoxTemplate: FC<ComboBoxTemplateProps> = ({
       role={"button"}
       tabIndex={0}
       onClick={onClick}
+      onFocus={onFocus}
       className={isOpen ? "focused" : undefined}
       onKeyDown={onKeyDown}
       ref={ref as unknown as RefObject<HTMLDivElement>}

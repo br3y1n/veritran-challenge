@@ -1,8 +1,10 @@
-import { Options } from "../../ComboBox/models";
+import { Option } from "../../ComboBox/models";
 
 interface ComboBoxItemsContainerProps {
-  options: Options[];
+  options: Option[];
   onChangeOption: (option: string) => void;
+  subContainerClassname?: string;
+  itemsClassname?: string;
 }
 
 export { ComboBoxItemsContainerProps };

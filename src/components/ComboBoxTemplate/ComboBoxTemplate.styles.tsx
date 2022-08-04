@@ -5,11 +5,13 @@ import {
   selectColorSecondary,
   selectColorWhite,
 } from "../../theme/selectors";
+import { NO_HIGHLIGHTS } from "../../styles";
 
 const PADDING_Y = 3;
 const PADDING_X = 8;
 
 const ComboBoxTemplateStyles = styled.div`
+  ${NO_HIGHLIGHTS};
   padding: ${PADDING_Y}px ${PADDING_X}px;
   background: ${selectColorWhite};
   border: 1px solid ${selectColorGrey4};

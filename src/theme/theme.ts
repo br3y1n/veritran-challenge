@@ -4,6 +4,7 @@ const theme = {
     secondary: "#30588D",
     neutrals: {
       white: "#FFFFFF",
+      black: "#000000",
       grey1: "#F3F3F3",
       grey2: "#E7E7E7",
       grey3: "#DDDDDD",
@@ -17,6 +18,7 @@ const theme = {
       small: "10px",
       medium: "12px",
       large: "13.5px",
+      extraLarge: "14px",
     },
   },
 };
