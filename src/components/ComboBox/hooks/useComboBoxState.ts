@@ -1,5 +1,5 @@
 import { KeyboardEventHandler, useEffect, useMemo, useState } from "react";
-import { Options, UseComboBoxState } from "../models";
+import { Option, UseComboBoxState } from "../models";
 import { KeyCodeEnum } from "../../../enums";
 
 const useComboBoxState: UseComboBoxState = ({ options, onChange }) => {
@@ -10,9 +10,9 @@ const useComboBoxState: UseComboBoxState = ({ options, onChange }) => {
   const isSelected = itemSelected !== null;
   const classLabel = isSelected ? "selected" : undefined;
 
-  const optionsMapped: Options[] = useMemo(
+  const optionsMapped: Option[] = useMemo(
     () =>
-      options.map<Options>((option, index) => ({
+      options.map<Option>((option, index) => ({
         option,
         selected: option === itemSelected,
         focused: index === itemFocused,

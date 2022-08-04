@@ -4,9 +4,10 @@ interface ComboBoxTemplateProps {
   renderLeft: () => ReactElement;
   renderItems: () => ReactElement;
   isOpen: boolean;
-  onClick: () => void;
+  onClick?: () => void;
   onClickOutside: () => void;
-  onKeyDown: KeyboardEventHandler<HTMLDivElement>;
+  onFocus?: () => void;
+  onKeyDown?: KeyboardEventHandler<HTMLDivElement>;
 }
 
 export { ComboBoxTemplateProps };

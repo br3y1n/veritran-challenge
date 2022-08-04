@@ -4,7 +4,7 @@ import { ComboBoxItemsStyles } from "./ComboBoxItem.styles";
 import { useComboBoxItemState } from "./hooks/useComboBoxItemState";
 
 const ComboBoxItem: FC<ComboBoxItemProps> = (props) => {
-  const { selected, focused, option, onChangeOption } = props;
+  const { selected, focused, option, className, onChangeOption } = props;
   const { ref } = useComboBoxItemState(props);
 
   return (
@@ -13,7 +13,9 @@ const ComboBoxItem: FC<ComboBoxItemProps> = (props) => {
       onClick={() => onChangeOption(option)}
       role={"option"}
       tabIndex={-1}
-      className={`${selected ? "selected" : ""} ${focused ? "focused" : ""}`}
+      className={`${className} ${selected ? "selected" : ""} ${
+        focused ? "focused" : ""
+      }`}
     >
       {option}
     </ComboBoxItemsStyles>

@@ -1,15 +1,17 @@
 import styled from "styled-components";
 import { selectColorWhite } from "../../theme/selectors";
+import { ComboBoxItemsStyles } from "../ComboBoxItem/ComboBoxItem.styles";
 
-const ComboBoxItemsSubcontainerStyles = styled.div`
+const ComboBoxItemsContainerStyles = styled.div`
   top: 40px;
   left: 0px;
   position: absolute;
   padding: 4px 0px 8px 0px;
   width: 100%;
+  cursor: auto;
 `;
 
-const ComboBoxItemsContainerStyles = styled.ul`
+const ComboBoxItemsSubContainerStyles = styled.ul`
   position: relative;
   padding: 4px 0px;
   width: 100%;
@@ -22,4 +24,16 @@ const ComboBoxItemsContainerStyles = styled.ul`
   list-style-type: none;
 `;
 
-export { ComboBoxItemsContainerStyles, ComboBoxItemsSubcontainerStyles };
+const NoMatchesStyles = styled(ComboBoxItemsStyles)`
+  cursor: auto;
+
+  &:hover {
+    background-color: ${selectColorWhite};
+  }
+`;
+
+export {
+  ComboBoxItemsSubContainerStyles,
+  ComboBoxItemsContainerStyles,
+  NoMatchesStyles,
+};

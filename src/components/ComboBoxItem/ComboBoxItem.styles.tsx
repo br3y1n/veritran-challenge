@@ -18,6 +18,7 @@ const ComboBoxItemsStyles = styled.li`
   font-size: ${selectFontSizeMedium};
   display: flex;
   align-items: center;
+  cursor: pointer;
 
   &:hover {
     background-color: ${selectColorGrey1};

@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { UseComboBoxItemState } from "../models/UseComboBoxItemState.models";
+import { UseComboBoxItemState } from "../models";
 
 const useComboBoxItemState: UseComboBoxItemState = ({ focused }) => {
   const ref = useRef();
