@@ -1,10 +1,10 @@
 import { act, fireEvent, screen } from "@testing-library/react";
-import { ComboBoxProps } from "./models";
 import { renderWithTheme } from "../../presets/jest.utils";
 import { KeyCodeEnum } from "../../enums";
 import ComboBoxServer from "./ComboBoxServer";
+import { ComboBoxServerProps } from "./models";
 
-const comboBoxProps: ComboBoxProps = {
+const comboBoxProps: ComboBoxServerProps = {
   options: ["test1", "test2", "test3"],
   onChange: jest.fn(),
   onFetch: jest.fn(),

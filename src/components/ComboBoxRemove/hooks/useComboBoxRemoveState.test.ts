@@ -1,11 +1,8 @@
 import { act, renderHook, RenderHookResult } from "@testing-library/react";
-import {
-  ComboBoxProps,
-  UseComboBoxRemoveStateResponse,
-  UseComboBoxStateResponse,
-} from "../models";
+import { UseComboBoxRemoveStateResponse } from "../models";
 import { KeyCodeEnum } from "../../../enums";
 import { useComboBoxRemoveState } from "./useComboBoxRemoveState";
+import { ComboBoxProps } from "../../ComboBox/models";
 
 const comboBoxProps: ComboBoxProps = {
   options: ["test1", "test2", "test3"],

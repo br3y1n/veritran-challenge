@@ -1,8 +1,8 @@
 import { act, fireEvent, screen } from "@testing-library/react";
-import { ComboBoxProps } from "./models";
 import { renderWithTheme } from "../../presets/jest.utils";
 import { KeyCodeEnum } from "../../enums";
 import ComboBoxFilter from "./ComboBoxFilter";
+import { ComboBoxProps } from "../ComboBox/models";
 
 const comboBoxProps: ComboBoxProps = {
   options: ["test1", "test2", "test3"],

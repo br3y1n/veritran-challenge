@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { UseComboBoxItemsContainerState } from "../models/UseComboBoxItemsContainerState.models";
+import { UseComboBoxItemsContainerState } from "../models";
 
 const useComboBoxItemsContainerState: UseComboBoxItemsContainerState = ({
   options,

@@ -1,5 +1,5 @@
 import { act, fireEvent, screen } from "@testing-library/react";
-import { ComboBoxProps } from "./models";
+import { ComboBoxProps } from "../ComboBox/models";
 import { renderWithTheme } from "../../presets/jest.utils";
 import { KeyCodeEnum } from "../../enums";
 import ComboBoxRemove from "./ComboBoxRemove";
