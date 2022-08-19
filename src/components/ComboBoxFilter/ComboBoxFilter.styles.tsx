@@ -38,8 +38,8 @@ const FilterContainerStyles = styled.div`
 const InputStyles = styled.input`
   width: calc(100% - 36px);
   height: calc(100% - 4px);
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   border-color: transparent;
   outline: none;
   caret-color: ${selectColorSecondary};
@@ -51,7 +51,7 @@ const InputStyles = styled.input`
 const SearchStyles = styled(OldSearch)`
   height: ${SEARCH_SIZES}px;
   width: ${SEARCH_SIZES}px;
-  margin: 4px 12px 4px 0px;
+  margin: 4px 12px 4px 0;
 
   & > * {
     fill: ${selectColorBlack};
@@ -77,7 +77,7 @@ const WrapperComboBoxItemsContainerStyles = styled(
   WrapperComboBoxItemsContainer
 )`
   border-radius: 6px;
-  padding: 8px 0px;
+  padding: 8px 0;
   overflow-x: hidden;
 
   &::-webkit-scrollbar {
