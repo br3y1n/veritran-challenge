@@ -4,23 +4,23 @@ import { ComboBoxItemsStyles } from "../ComboBoxItem/ComboBoxItem.styles";
 
 const ComboBoxItemsContainerStyles = styled.div`
   top: 40px;
-  left: 0px;
+  left: 0;
   position: absolute;
-  padding: 4px 0px 8px 0px;
+  padding: 4px 0 8px 0;
   width: 100%;
   cursor: auto;
 `;
 
 const ComboBoxItemsSubContainerStyles = styled.ul`
   position: relative;
-  padding: 4px 0px;
+  padding: 4px 0;
   width: 100%;
   max-height: 256px;
   overflow-y: auto;
   background-color: ${selectColorWhite};
-  border-radius: 0px 0px 6px 6px;
-  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
-  margin: 0px;
+  border-radius: 0 0 6px 6px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.16);
+  margin: 0;
   list-style-type: none;
 `;
 

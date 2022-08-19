@@ -15,13 +15,13 @@ const ComboBoxLabelStyles = styled.label`
   font-size: ${selectFontSizeLarge};
   line-height: 16px;
   display: inline-block;
-  margin: 8px 0px;
+  margin: 8px 0;
   cursor: pointer;
 
   &.selected {
     font-weight: 600;
     font-size: ${selectFontSizeSmall};
-    margin: 0px;
+    margin: 0;
     display: block;
   }
 `;

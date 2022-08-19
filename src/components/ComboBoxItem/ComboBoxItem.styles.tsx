@@ -10,7 +10,7 @@ import {
 
 const ComboBoxItemsStyles = styled.li`
   z-index: 1000;
-  padding: 0px 24px;
+  padding: 0 24px;
   height: 40px;
   width: calc(100% - 48px);
   color: ${selectColorPrimary};

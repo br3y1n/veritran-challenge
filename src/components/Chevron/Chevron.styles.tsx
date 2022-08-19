@@ -8,7 +8,7 @@ const CHEVRON_SIZE = 24;
 const styles = css`
   height: ${CHEVRON_SIZE}px;
   width: ${CHEVRON_SIZE}px;
-  margin: 4px 0px;
+  margin: 4px 0;
   & > * {
     fill: ${selectColorSecondary};
   }

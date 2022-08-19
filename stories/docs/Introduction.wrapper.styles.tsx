@@ -8,7 +8,7 @@ const Title = styled.h1`
 const P = styled.p`
   font-size: 30px;
   text-align: center;
-  padding: 10px 0px;
+  padding: 10px 0;
 `;
 
 const Img = styled.img`

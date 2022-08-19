@@ -7,7 +7,7 @@ const X_SIZE = 24;
 const CloseStyles = styled(OldClose)`
   height: ${X_SIZE}px;
   width: ${X_SIZE}px;
-  margin: 4px 8px 4px 0px;
+  margin: 4px 8px 4px 0;
   cursor: pointer;
 
   & > * {
